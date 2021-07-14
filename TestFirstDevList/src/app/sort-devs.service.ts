@@ -47,27 +47,17 @@ export class SortDevsService {
     // {name: 'Gabor', language: 'TypeScript', skill: 'J'},
     // {name: 'Senior', language: 'TypeScript', skill: 'S'},
     // {name: 'Junior', language: 'TypeScript', skill: 'J'},
-    let result: string[] = [];
-    result = this.matchDevelopers(listOfMatchingDevs);
-    listOfMatchingDevs.forEach((dev: any) => {
-      this.matchDevelopers(listOfMatchingDevs).forEach(item => {
+    let results: any[] = [];
+    for (let i = 0; i < listOfMatchingDevs.length - 1; i++) {
+      // This is where you'll capture that last value
+      for (let j = i + 1; j < listOfMatchingDevs.length; j++) {
+        if (listOfMatchingDevs[i].skill !== listOfMatchingDevs[j].skill) {
+          results.push([listOfMatchingDevs[i].name, listOfMatchingDevs[j].name]);
+        }
+      }
+    }
+    console.log(results);
 
-        result.push();
-      });
-    });
-
-
-    // listOfMatchingDevs.forEach((item: any) => {
-    //   let pair: any = reject(listOfMatchingDevs, ['skill', item.skill])
-    //     .map((item: any) => {
-    //       return {name: item.name, skill: item.skill};
-    //     });
-    //
-    //   result = [...result, item, pair[0]];
-    // });
-
-    console.log(result);
-
-    return result;
+    return results;
   }
 }

@@ -73,9 +73,9 @@ describe('SortDevsService', () => {
 
     let expectation: any = [
       ['Slava','Gabor'],
-      ['Senior','Junior'],
       ['Slava','Junior'],
-      ['Senior','Gabor']
+      ['Gabor','Senior'],
+      ['Senior','Junior']
     ];
 
     const fixture = TestBed.createComponent(AppComponent);
