@@ -1,5 +1,6 @@
-<div *ngFor="let item of devList">
+<div class="container" *ngFor="let item of devList">
   <div>{{item.name}} - {{item.language}}</div>
 </div>
-<button (click)="sortDevs()">Sort</button>
+<hr>
+<button mat-raised-button color="primary" (click)="sortDevs()">Sort</button>
 

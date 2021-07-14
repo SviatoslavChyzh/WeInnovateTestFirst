@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SortDevsService } from './sort-devs.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'TestFirstDevList';
 
   devList = [
@@ -19,10 +20,34 @@ export class AppComponent {
     {name: 'NoName', language: 'Python'}
   ];
 
-  sortDevs(sortBy: any) {
-    console.log(sortBy);
-    this.devList = this.devList.sort((a, b) => a.name > b.name ? 1 : -1);
+  listOfTSDevs = [
+    {name: 'Slava', language: 'TypeScript'},
+    {name: 'Gabor', language: 'TypeScript'},
+  ]
 
-    return this.devList;
+  listOfJavaDevs = [
+    {name: 'Mug', language: 'Java'},
+    {name: 'Spider', language: 'Java'},
+  ]
+
+  listOfDevs = [
+    {name: 'Slava', language: 'TypeScript'},
+    {name: 'Gabor', language: 'TypeScript'},
+    {name: 'Mug', language: 'Java'},
+    {name: 'Spider', language: 'Java'},
+  ]
+
+  constructor(
+    public sortDevsService: SortDevsService
+  ) { }
+
+  ngOnInit() {
+    this.sortDevsService.matchDevelopers(this.listOfDevs);
   }
+
+  sortDevs() {
+    this.devList = this.sortDevsService.sortDevs(this.devList);
+  }
+
+
 }
