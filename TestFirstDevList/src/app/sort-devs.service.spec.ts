@@ -71,13 +71,19 @@ describe('SortDevsService', () => {
 
   it('should return sorted by skill matched developers', () => {
 
+    let expectation: any = [
+      ['Slava','Gabor'],
+      ['Senior','Junior'],
+      ['Slava','Junior'],
+      ['Senior','Gabor']
+    ];
+
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
 
-    // expect(service.matchBySkillDevelopers(app.listOfTSSkilledDevs)).toEqual(jasmine.arrayWithExactContents(expectation));
-
     service.matchBySkillDevelopers(app.listOfTSSkilledDevs).forEach(item => {
-      expect(item).
+      let found = expectation.includes(item);
+      expect(found).toEqual(true);
     });
   })
 
