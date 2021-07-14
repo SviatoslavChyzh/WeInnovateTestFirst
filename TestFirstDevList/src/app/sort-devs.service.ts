@@ -41,4 +41,10 @@ export class SortDevsService {
 
     return result;
   }
+
+  matchBySkillDevelopers(listOfMatchingDevs: any) {
+    let result: string[] = [];
+
+    return result;
+  }
 }

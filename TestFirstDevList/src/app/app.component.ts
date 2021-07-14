@@ -10,14 +10,23 @@ export class AppComponent implements OnInit{
   title = 'TestFirstDevList';
 
   devList = [
-    {name: 'Spider', language: 'Java'},
-    {name: 'Slava', language: 'TypeScript'},
-    {name: 'Gabor', language: 'TypeScript'},
-    {name: 'Bug', language: 'C#'},
-    {name: 'Mug', language: 'Java'},
-    {name: 'Foo', language: 'C#'},
-    {name: 'Bar', language: 'Python'},
-    {name: 'NoName', language: 'Python'}
+    {name: 'Spider', language: 'Java', skill: 'J'},
+    {name: 'Slava', language: 'TypeScript', skill: 'S'},
+    {name: 'Gabor', language: 'TypeScript', skill: 'J'},
+    {name: 'Senior', language: 'TypeScript', skill: 'S'},
+    {name: 'Junior', language: 'TypeScript', skill: 'J'},
+    {name: 'Bug', language: 'C#', skill: 'S'},
+    {name: 'Mug', language: 'Java', skill: 'S'},
+    {name: 'Foo', language: 'C#', skill: 'J'},
+    {name: 'Bar', language: 'Python', skill: 'J'},
+    {name: 'NoName', language: 'Python', skill: 'S'}
+  ];
+
+  listOfTSSkilledDevs = [
+    {name: 'Slava', language: 'TypeScript', skill: 'S'},
+    {name: 'Gabor', language: 'TypeScript', skill: 'J'},
+    {name: 'Senior', language: 'TypeScript', skill: 'S'},
+    {name: 'Junior', language: 'TypeScript', skill: 'J'},
   ];
 
   listOfTSDevs = [

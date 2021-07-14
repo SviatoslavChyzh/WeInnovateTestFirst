@@ -69,5 +69,17 @@ describe('SortDevsService', () => {
     expect(service.matchDevelopers(app.devList)).toEqual(jasmine.arrayWithExactContents(expectation));
   })
 
+  it('should return sorted by skill matched developers', () => {
+
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+
+    // expect(service.matchBySkillDevelopers(app.listOfTSSkilledDevs)).toEqual(jasmine.arrayWithExactContents(expectation));
+
+    service.matchBySkillDevelopers(app.listOfTSSkilledDevs).forEach(item => {
+      expect(item).
+    });
+  })
+
 
 });
