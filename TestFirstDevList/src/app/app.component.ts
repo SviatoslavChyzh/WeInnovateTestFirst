@@ -42,7 +42,7 @@ export class AppComponent implements OnInit{
   ) { }
 
   ngOnInit() {
-    this.sortDevsService.matchDevelopers(this.listOfDevs);
+    this.sortDevsService.matchDevelopers(this.devList);
   }
 
   sortDevs() {

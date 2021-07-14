@@ -41,7 +41,7 @@ describe('SortDevsService', () => {
   // })
 
   it('should devList be paired with two matching typescript developers', () => {
-    let expectation: any = ['Slava', 'Gabor'];
+    let expectation: any = [['Slava', 'Gabor']];
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
 
@@ -49,7 +49,7 @@ describe('SortDevsService', () => {
   })
 
   it('should devList be paired with two matching Java developers', () => {
-    let expectation: any = ['Mug', 'Spider'];
+    let expectation: any = [['Mug', 'Spider']];
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
 
@@ -58,13 +58,15 @@ describe('SortDevsService', () => {
 
   it('should return matched developers', () => {
     let expectation: any = [
+      ['Spider', 'Mug'],
       ['Slava', 'Gabor'],
-      ['Mug', 'Spider'],
+      ['Bug', 'Foo'],
+      ['Bar', 'NoName'],
     ];
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
 
-    expect(service.matchDevelopers(app.listOfDevs)).toEqual(expectation);
+    expect(service.matchDevelopers(app.devList)).toEqual(jasmine.arrayWithExactContents(expectation));
   })
 
 

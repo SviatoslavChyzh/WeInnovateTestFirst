@@ -34,7 +34,7 @@ export class SortDevsService {
       let pair: any = filter(listOfMatchingDevs, {'language': item})
         .map((item: any) => item.name);
 
-      result.push(pair);
+      result = [...result, pair];
     });
 
     console.log(result);
